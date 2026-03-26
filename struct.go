@@ -32,7 +32,7 @@ func main() {
 	fmt.Println(me.name)
 	fmt.Println(me.age)
 
-	// access can be done with ponter to struct
+	// access can be done with pointer to struct
 	fmt.Println(mePtr.name)
 	fmt.Println(mePtr.age)
 
@@ -47,4 +47,36 @@ func main() {
 	// newMe = new(Human)
 	// short way :
 	// newMe := new(Human)
+
+	newMe := new(Human) //it returns a pointer
+
+	fmt.Println(newMe)
+
+	you := Human{}
+
+	changingStruct(you)
+
+	fmt.Println(you.age) // still zero . because passes by value to function 'changing value'
+
+	// creating structs with 'var'
+
+	/*var v struct {
+		a int
+		b int
+	}*/
+
+	// short way to declare
+	v := struct {
+		a int
+		b int
+	}{10, 10}
+
+	fmt.Println(v)
+
+}
+
+func changingStruct(p Human) {
+	p.age = 99999
+	fmt.Println("in function scope : ")
+	fmt.Println(p.age)
 }

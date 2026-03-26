@@ -13,6 +13,14 @@ func main() {
 		fmt.Println(flag)
 	}
 
+	// struct embeding
+
+	// struct with var
+
+	// reciever value or pointer reciever
+
+	// interface with pointer
+
 }
 
 func isPrime(n int) bool {

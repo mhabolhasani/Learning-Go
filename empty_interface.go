@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math"
 )
 
 func DisplayType(i interface{}) {
@@ -21,4 +22,42 @@ func main() {
 	DisplayType(10)
 	DisplayType("what the fuck is this?")
 	DisplayType(12.265365464)
+
+	var a interface{}
+
+	v := vertex{
+		X: 1,
+		Y: 1,
+	}
+
+	a = v
+
+	switch a.(type) {
+	case vertex:
+		fmt.Println("a is vertex")
+		v = a.(vertex)
+	default:
+		fmt.Println("a is not vertex")
+	}
+	fmt.Println(a.(vertex))
+
+	var p
+
+	p := struct {
+		b int
+		a int
+	}{b: 10}
+
+}
+
+type vertex struct {
+	X, Y float64
+}
+
+func (v vertex) Abs() float64 {
+	return math.Sqrt(v.X*v.X + v.Y*v.Y)
+}
+
+type abser interface {
+	Abs() float64
 }
