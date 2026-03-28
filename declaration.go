@@ -54,8 +54,8 @@ func main() {
 	// type of constants
 	// error const age float32 = 10
 
-	var i int
-	var j int
+	//var i int
+	//var j int
 	// const lifetime = i + j  //it raises error
 
 }

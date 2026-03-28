@@ -1,33 +1,21 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
-	var flag bool
-	if isPrime(10) {
-		flag = true
-	} else {
-		flag = false
-	}
-	if flag {
-		fmt.Println(flag)
-	}
-
-	// struct embeding
-
-	// struct with var
-
-	// reciever value or pointer reciever
-
-	// interface with pointer
-
-}
-
-func isPrime(n int) bool {
-	for i := 2; i*i <= n; i++ {
-		if n%i == 0 {
-			return false
+	var p, q int
+	fmt.Scanf("%d %d", &p, &q)
+	for i := 1; i <= p; i++ {
+		if i%q == 0 {
+			r := i / q
+			for j := 1; j <= r; j++ {
+				fmt.Print("HOPE ")
+			}
+			fmt.Println()
+		} else {
+			fmt.Println(i)
 		}
 	}
-	return true
 }

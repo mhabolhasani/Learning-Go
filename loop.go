@@ -5,6 +5,10 @@ import (
 )
 
 func main() {
+	//for [initialization]; [condition]; [update] {
+	// loop body
+	//}
+
 	// usual loop
 	sum := 0
 	for i := 0; i < 10; i++ {
