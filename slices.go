@@ -87,4 +87,15 @@ func main() {
 	mySlice = append(mySlice, 12, 23, 24, 25, 26)
 	fmt.Printf("Contents: %v\n", mySlice)
 	fmt.Println("Length: \n", len(mySlice), cap(mySlice))
+
+	// another way to build an slice.using a predefined array
+
+	names := [10]int{1, 2, 3, 4, 5, 6, 7, 8, 9, 0}
+
+	sample := names[0:2] // it is a slice with pointer to array
+
+	fmt.Println(sample)
+	fmt.Println(cap(sample))
+	fmt.Println(len(sample))
+
 }
