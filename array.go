@@ -45,6 +45,23 @@ func main() {
 	changingValue(list)
 	fmt.Println(list) // values dont change.
 
+	// iteration on arrays
+
+	for index, value := range names {
+		fmt.Println(index, value)
+	}
+
+	// we can set _ for name of index. if we don't need it.
+	for _, value := range names {
+		fmt.Println(value)
+	}
+
+	// or we can just get the index!
+
+	for index := range names {
+		fmt.Println(index)
+	}
+
 }
 
 func changingValue(arr [3]int) {
