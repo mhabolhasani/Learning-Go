@@ -5,6 +5,11 @@ import (
 	"math"
 )
 
+type MusicPlayer interface {
+	start()
+	stop()
+}
+
 type geometry interface {
 	area() float64
 	perim() float64
@@ -52,4 +57,16 @@ func main() {
 	// these structs as arguments to `measure`.
 	measure(r)
 	measure(c)
+
+	// use empty interface if we do not want to set types or we do not know.
+	// go developers offers that use 'any' instead of 'interface'
+
+	var _ any = 10
+	var _ interface{} = "mohammad hossein abolhasani"
+
+	// actually interfaces let us define functions that works for different types
+	// this opportunity called 'polymorphism'
+
+	// if methods defined by pointer receiver the pointer implement the interface
+
 }

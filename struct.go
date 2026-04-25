@@ -4,9 +4,15 @@ import (
 	"fmt"
 )
 
+// go does not support OOP.
+
 type Human struct { // the syntax.
 	name string
 	age  int
+}
+
+type Point struct {
+	x, y int
 }
 
 func main() {
@@ -60,12 +66,8 @@ func main() {
 
 	// creating structs with 'var'
 
-	/*var v struct {
-		a int
-		b int
-	}*/
-
 	// short way to declare
+	// if a struct is gonna used only once.
 	v := struct {
 		a int
 		b int
@@ -73,10 +75,26 @@ func main() {
 
 	fmt.Println(v)
 
+	// operators on structs
+	// we can use '==' , '!='
+
+	// we can use a struct as a key of map
+	// if all the fields are
+
+	points := make(map[Point]string)
+	points[Point{x: 10, y: 20}] = "A"
+
+	// slice of structs!
+	var people []Human
+	people = append(people, Human{"mha", 20})
 }
 
 func changingStruct(p Human) {
 	p.age = 99999
 	fmt.Println("in function scope : ")
 	fmt.Println(p.age)
+}
+
+func incrementAge(p *Human) {
+	p.age++
 }
