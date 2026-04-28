@@ -41,7 +41,6 @@ func main() {
 	}
 	fmt.Println(a.(vertex))
 
-	var p
 
 	p := struct {
 		b int
