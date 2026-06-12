@@ -24,4 +24,20 @@ func main() {
 	// the program has a 'main goroutine'
 	// if this one ends. others also end!. using time.sleep is not a good approach!
 	// the solution is 'sync' library.
+
+	// go with anonymous func
+
+	thread()
+}
+
+func thread() {
+	go func() {
+		for i := 0; i <= 100; i++ {
+			fmt.Println("++++++")
+		}
+	}()
+
+	for i := 0; i <= 100; i++ {
+		fmt.Println("-------")
+	}
 }
